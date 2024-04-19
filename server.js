@@ -133,6 +133,7 @@ app.post('/api/checkSimilarity', async (req, res) => {
         data.save();
         return res.status(200).send("No match found");
     } catch (err) {
+        console.log(err);
         return res.status(400).json(err);
     }
 })
