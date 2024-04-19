@@ -58,7 +58,10 @@ app.post('/api/dismissAlert', async (req, res) => {
       }
   
       // Insert the document into the posts collection
-      const post = await Post.create(alert);
+      const post = await Post.create({
+          file:alert.file,
+          embeddings:alert.embeddings
+      });
       post.save();
       
       res.status(200).json({ message: "Alert added to recognised list successfully"});
