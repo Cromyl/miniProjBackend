@@ -122,7 +122,7 @@ app.post('/api/checkSimilarity', async (req, res) => {
             score=document.score;
         });
         console.log("score = ",score);
-        if (score > 0.9) {
+        if (score > 0.7) {
             return res.status(200).send(documents);
         }
         const obj = {
