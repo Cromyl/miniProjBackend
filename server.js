@@ -119,6 +119,7 @@ app.post('/api/checkSimilarity', async (req, res) => {
         ])
         var score=0;
         documents.forEach(document => {
+            document.file=file;
             score=document.score;
         });
         console.log("score = ",score);
